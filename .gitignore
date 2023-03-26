@@ -1,3 +1,5 @@
+# erlang
+
 .rebar3
 _*
 .eunit
@@ -17,3 +19,8 @@ _build
 *.iml
 rebar3.crashdump
 *~
+
+
+# macos
+
+.DS_Store
