@@ -1,0 +1,6 @@
+-sname validator
+
+-setcookie validator_cookie
+
++K true
++A30
