@@ -2,7 +2,7 @@
 -on_load(init/0).
 
 -export([
-    validate/1
+    validate/2
 ]).
 
 init() ->
@@ -14,10 +14,10 @@ init() ->
             Dir ->
                 Dir
         end,
-    LibPath = filename:join(PrivFolder, atom_to_list(?MODULE)),
+    LibPath = filename:join(PrivFolder, "xml_validator"),
     SchemaPath = filename:join(PrivFolder, "xml-schemas/template.xsd"),
     ok = erlang:load_nif(LibPath, SchemaPath).
 
--spec validate(binary()) -> ok | {error, [binary()]}.
-validate(XmlBinary) when is_binary(XmlBinary) ->
+-spec validate(integer(), integer()) -> integer().
+validate(_Number1, _Number2)->
     erlang:nif_error({nif_not_loaded, ?MODULE}).
